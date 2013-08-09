@@ -22,20 +22,20 @@
         this._init(el, options);
         return this;
     }
-	
-	Slider.prototype = {
     
-		constructor: Slider,
-		
-		_init: function(el, options) {
+    Slider.prototype = {
+    
+        constructor: Slider,
+        
+        _init: function(el, options) {
             var self = this,
                 items = $(options.item),
                 container = $(options.container);
             
             this._el = $(el);
-			this._options = options;
-			this._showItemIndex = options.startIndex;
-			this._totalItem = $(options.item).length;
+            this._options = options;
+            this._showItemIndex = options.startIndex;
+            this._totalItem = $(options.item).length;
             
             if (this._totalItem <= 0) {
                 return this;
@@ -49,7 +49,7 @@
                 items.css("position", "absolute").slice(1).css("left", container.width());
             }
             
-			this.play();
+            this.play();
             
             container.on("mouseenter", function() {
                 self.stop();
@@ -59,18 +59,18 @@
             });
             
             return this;
-		},
-		
-		play: function() {
+        },
+        
+        play: function() {
             var self = this;
             
-			this._timerId = setInterval(function() {
+            this._timerId = setInterval(function() {
                 self._to();
-			}
-			, this._options.delay);
+            }
+            , this._options.delay);
             
             return this;
-		},
+        },
         
         stop: function() {            
             this._timerId && clearInterval(this._timerId);
@@ -156,20 +156,20 @@
 
             return this;
         }
-	};
-	
-	$.fn.jqSlider = function (options) {
-	
-		this.each(function() {
-			var $this = $(this),
-				instance;
-			
+    };
+    
+    $.fn.jqSlider = function (options) {
+    
+        this.each(function() {
+            var $this = $(this),
+                instance;
+            
             if (!$this.data("slider")) {
                 instance = new Slider($this, options);
                 $this.data("slider", instance);
             }
-		});
-		
-		return this;
-	}
+        });
+        
+        return this;
+    }
 })(jQuery)
