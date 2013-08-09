@@ -6,22 +6,22 @@
 (function ($) {
     "use strict"
     
-	var Slider = function (el, options) {
-	
-		var defaults = {
+    var Slider = function (el, options) {
+
+        var defaults = {
             speed: 600,
-			delay: 5000,
-			item: ".slider-item",
-			container: ".slider-container",
+            delay: 5000,
+            item: ".slider-item",
+            container: ".slider-container",
             animation: "fade",
             startIndex: 0,
             complete: $.noop
         };
-		
-		options = $.extend(defaults, options);
-		this._init(el, options);
-		return this;
-	}
+        
+        options = $.extend(defaults, options);
+        this._init(el, options);
+        return this;
+    }
 	
 	Slider.prototype = {
     
