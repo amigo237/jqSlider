@@ -45,7 +45,9 @@
                 items.css({"marginRight" : "-100%", "float" : "left"}).slice(1).css("opacity", 0);
             }
             else if (options.animation === "slide") {
-                items.eq(0).css("left", 0);
+                var itemFirst = items.eq(0);
+                container.css({"padding" : "0px", "border-width" : "0px", "width" : itemFirst.outerWidth(), "height" : itemFirst.outerHeight()});
+                itemFirst.css("left", 0);
                 items.css("position", "absolute").slice(1).css("left", container.width());
             }
             

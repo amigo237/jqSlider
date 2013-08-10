@@ -6,7 +6,7 @@
 <style type="text/css">
 	*{margin: 0; padding: 0}
 	.slider-container {overflow: hidden; position: relative; width:800px; height:507px;}
-	.slider-item { list-style: none; float: left;}
+	.slider-item { list-style: none;}
 </style>
 </head>
 <body>
@@ -34,7 +34,7 @@
 var slider;
 $(function() {
     slider = $(".slider-container").jqSlider({
-        animation: "fade"
+        animation: "slide"
     }).data("slider");
 })
 </script>
