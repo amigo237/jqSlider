@@ -64,6 +64,7 @@
         play: function() {
             var self = this;
             
+            this._timerId && clearInterval(this._timerId);
             this._timerId = setInterval(function() {
                 self._to();
             }
